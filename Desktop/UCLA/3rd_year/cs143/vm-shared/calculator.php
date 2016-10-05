@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        if(empty($matches)){ 
 
       #do a pregmatch for # space #
-        $pattern = "/[0123456789]( *)[0123456789]/";
+        $pattern = "/[0123456789]( +)[0123456789]/";
         preg_match($pattern, $subject, $matches);
         if(empty($matches)) {
               eval("\$result = $eq;");
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                    echo "<h2>Result</h2>";
                    exit("Division by zero error!");
                }
-              $pattern = "/[+-\/\*\.][+\/\*\.]/";
+              $pattern = "/[\+-\/\*\.][\+\/\*\.]/";
               preg_match($pattern, $subject, $matches);
               if(empty($matches)){
                    echo "<h2>Result</h2>";
